@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>打工人的自我修养(后端)01——Hello World Spring Boot | 自律的打工人</title><meta name="keywords" content="Java,Spring Boot,后端"><meta name="author" content="Zzyi"><meta name="copyright" content="Zzyi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、Readme如果想要开始学习后端的知识，那我有以下网站推荐 网站寄了，那没事了，还是看一看这篇文章吧。 如果你能从这篇文章获得对Java开发的兴趣，那便是对我的最大支持。 另，本篇文章不会对编程基础进行讲解，如果理解有困难的话，建议直接与我交流。 没有联系方式，只能说联系得到我的人都联系得到我。 二、准备工作软件准备：  IDE: 当然还是首推IntelliJ IDEA：JetBrains 功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="打工人的自我修养(后端)01——Hello World Spring Boot">
+<meta property="og:url" content="https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/index.html">
+<meta property="og:site_name" content="自律的打工人">
+<meta property="og:description" content="一、Readme如果想要开始学习后端的知识，那我有以下网站推荐 网站寄了，那没事了，还是看一看这篇文章吧。 如果你能从这篇文章获得对Java开发的兴趣，那便是对我的最大支持。 另，本篇文章不会对编程基础进行讲解，如果理解有困难的话，建议直接与我交流。 没有联系方式，只能说联系得到我的人都联系得到我。 二、准备工作软件准备：  IDE: 当然还是首推IntelliJ IDEA：JetBrains 功">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/cover.svg">
+<meta property="article:published_time" content="2022-08-10T06:35:25.000Z">
+<meta property="article:modified_time" content="2022-08-23T02:00:04.151Z">
+<meta property="article:author" content="Zzyi">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring Boot">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/cover.svg"><link rel="shortcut icon" href="/hexoblog/img/favicon.png"><link rel="canonical" href="https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexoblog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexoblog/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"top-center"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '打工人的自我修养(后端)01——Hello World Spring Boot',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-23 10:00:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexoblog/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/hexoblog/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/hexoblog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/hexoblog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexoblog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/link"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/hexoblog/2022/08/10/c2af516864cc/cover.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexoblog/">自律的打工人</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexoblog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexoblog/link"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">打工人的自我修养(后端)01——Hello World Spring Boot</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-10T06:35:25.000Z" title="发表于 2022-08-10 14:35:25">2022-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-23T02:00:04.151Z" title="更新于 2022-08-23 10:00:04">2022-08-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexoblog/categories/%E6%89%93%E5%B7%A5%E4%BA%BA%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/">打工人的自我修养</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexoblog/categories/%E6%89%93%E5%B7%A5%E4%BA%BA%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="打工人的自我修养(后端)01——Hello World Spring Boot"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、Readme"><a href="#一、Readme" class="headerlink" title="一、Readme"></a>一、Readme</h1><p>如果想要开始学习后端的知识，那我有以下网站推荐</p>
+<p>网站寄了，那没事了，还是看一看这篇文章吧。</p>
+<p>如果你能从这篇文章获得对Java开发的兴趣，那便是对我的最大支持。</p>
+<p>另，本篇文章不会对编程基础进行讲解，如果理解有困难的话，建议直接与我交流。</p>
+<p>没有联系方式，只能说联系得到我的人都联系得到我。</p>
+<h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><p>软件准备：</p>
+<ul>
+<li><p>IDE: 当然还是首推<a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/idea/">IntelliJ IDEA：JetBrains 功能强大、符合人体工程学的 Java IDE</a>，对于本篇教程而言，Community版本已完全足够使用，如果想要使用Ultimate版本，请参考以下<a target="_blank" rel="noopener" href="https://3.jetbra.in/">破解教程</a></p>
+</li>
+<li><p>JDK: 对于如今的程序员，Java8已不再是主流的JDK，建议使用Java11或者Java17，这两个版本是LTS(长期维护)版本，请于此下载适合的版本<a target="_blank" rel="noopener" href="https://jdk.java.net/archive/">Archived OpenJDK GA Releases</a></p>
+</li>
+</ul>
+<p>环境准备：</p>
+<ol>
+<li><p>解压缩JDK，添加里面的<code>bin</code>目录到系统环境变量<br>运行以下命令,如果出现版本信息则配置正确</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IDE安装到任意目录，如果在安装过程中没有勾选生成桌面快捷方式，可以到开始菜单寻找软件图标</p>
+</li>
+</ol>
+<h1 id="三、Hello-World-Spring-Boot"><a href="#三、Hello-World-Spring-Boot" class="headerlink" title="三、Hello World Spring Boot"></a>三、Hello World Spring Boot</h1><h2 id="1-何谓Spring-Boot"><a href="#1-何谓Spring-Boot" class="headerlink" title="1. 何谓Spring Boot"></a>1. 何谓Spring Boot</h2><blockquote>
+<p>Spring Boot 是 Pivotal 团队在 Spring 的基础上提供的一套全新的开源框架，其目的是为了简化 Spring 应用的搭建和开发过程。Spring Boot 去除了大量的 XML 配置文件，简化了复杂的依赖管理。</p>
+<p>Spring Boot 具有 Spring 一切优秀特性，Spring 能做的事，Spring Boot 都可以做，而且使用更加简单，功能更加丰富，性能更加稳定而健壮。随着近些年来微服务技术的流行，Spring Boot 也成了时下炙手可热的技术。</p>
+<p>Spring Boot 集成了大量常用的第三方库配置，Spring Boot 应用中这些第三方库几乎可以是零配置的开箱即用（out-of-the-box），大部分的 Spring Boot 应用都只需要非常少量的配置代码（基于 Java 的配置），开发者能够更加专注于业务逻辑。</p>
+</blockquote>
+<p><del>太长不看</del></p>
+<h2 id="2-Spring-Initializr"><a href="#2-Spring-Initializr" class="headerlink" title="2. Spring Initializr"></a>2. Spring Initializr</h2><p>如果你的IDE是Ultimate版本，则可以在新建项目栏直接选择这一项，对于Community版本则需要使用这个网站完成项目初始化<a target="_blank" rel="noopener" href="https://start.spring.io/">Spring Initializr</a></p>
+<p>变更Group ID 与 Artifact ID 为你想要的名称</p>
+<p>注意选择Java版本点击Generate按钮即可完成项目生成</p>
+<p>将下载的压缩包解压到任意目录，使用IDEA打开</p>
+<h2 id="3-配置Maven"><a href="#3-配置Maven" class="headerlink" title="3. 配置Maven"></a>3. 配置Maven</h2><p>对于初次运行的项目，Maven会从中央仓库下载依赖，但中央仓库的地址不在国内，下载速度不能说是慢如蜗牛，只能说是纹丝不动。</p>
+<p>那么这里有两个解决方案:</p>
+<ol>
+<li><p>配置镜像仓库地址，这里首推<a target="_blank" rel="noopener" href="https://developer.aliyun.com/mvn/guide">aliyun仓库服务</a>。<br>默认的<code>settings.xml</code>可以在<code>IDEA path\plugins\maven\lib\maven3\conf</code>目录下找到，按照教程更改配置内容，这里建议搜索关键字<code>localRepository</code>更改依赖的默认存储位置，比如我的是<code>&lt;localRepository&gt;D:\maven\repository&lt;/localRepository&gt;</code><br>，更改配置后需要将配置文件移到<code>C:\Users\%username%\.m2</code>才能生效，或者更改IDEA的Setting，搜索Maven，勾选Overwrite，选定刚才的文件。</p>
+</li>
+<li><p>配置代理服务器（</p>
+</li>
+</ol>
+<p>配置完成后还有一个东西下载非常慢，那便是因为<code>.mvn/wrapper/maven-wrapper.properties</code>将Maven下载Url写死了，这里可以直接删除这个文件夹，然后更改IDEA的Setting，搜索Maven，取消勾选最下面的一个选项即可，这样修改会使用IDEA内置的Maven，可能不是最新版本。影响不大，不用特别在意（想想现在Java都出18了，还有人用Java8）</p>
+<h2 id="4-编写你的第一个接口"><a href="#4-编写你的第一个接口" class="headerlink" title="4. 编写你的第一个接口"></a>4. 编写你的第一个接口</h2><p>运行这个项目的main函数，程序正常退出，代表一切正常。</p>
+<p>如果我们想要编写一个Web API，那么需要添加一个依赖<code>spring-boot-starter-web</code>，使用如下网站<a target="_blank" rel="noopener" href="https://mvnrepository.com/">MVN Repository</a>使用如上关键字进行搜索，选择最新版本，复制Maven Dependency粘贴到<code>pom.xml</code>文件下<code>dependencies</code>节点下，此依赖作为<code>spring-boot-starter-parent</code>的子项目，在使用时建议删除版本号，Maven会自动下载合适的版本。</p>
+<p>粘贴完成后点击右上角M图标加载依赖，再次启动main函数发现程序会一直运行，则配置正确，如果程序直接退出，检查8080端口是否已被占用，如果被占用，编辑<code>application.properties</code>文件，添加配置<code>server.port=xxxx</code>进行服务器端口的修改。</p>
+<p>在main函数所在的类所在的包下新建Java Class，输入<code>controller.HelloController</code>，IDE会自动创建包<code>controller</code>，然后自动创建Java Class<code>HelloController</code>，然后编辑以下内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加上这个注解才能处理http请求</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line">    <span class="comment">// 配置url映射，当访问serverAddress/hello时返回以下数据</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello World Spring Boot&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动main函数，使用浏览器访问<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/hello">http://127.0.0.1:8080/hello</a>，页面输出<code>Hello World Spring Boot</code>。</p>
+<p>恭喜天赋异禀的你，第一个Web API至此建立完成。</p>
+<img src="/hexoblog/2022/08/10/c2af516864cc/2022-08-11-11-15-13-c62fb05b787210bc66137effe67efa5.jpg" class="">
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zzyi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/">https://uniminio.github.io/hexoblog/2022/08/10/c2af516864cc/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://uniminio.github.io/hexoblog" target="_blank">自律的打工人</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexoblog/tags/Java/">Java</a><a class="post-meta__tags" href="/hexoblog/tags/Spring-Boot/">Spring Boot</a><a class="post-meta__tags" href="/hexoblog/tags/%E5%90%8E%E7%AB%AF/">后端</a></div><div class="post_share"><div class="social-share" data-image="/hexoblog/2022/08/10/c2af516864cc/cover.svg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexoblog/2022/06/26/eb22c48e2dd8/"><img class="prev-cover" src="/hexoblog/2022/06/26/eb22c48e2dd8/cover.svg" onerror="onerror=null;src='/hexoblog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">内网穿透工具frp的简单使用</div></div></a></div><div class="next-post pull-right"><a href="/hexoblog/2022/08/23/efc3e8c826a3/"><img class="next-cover" src="/hexoblog/2022/08/23/efc3e8c826a3/cover.svg" onerror="onerror=null;src='/hexoblog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">打工人的自我修养-后端-02——接口测试框架</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexoblog/2022/08/23/efc3e8c826a3/" title="打工人的自我修养-后端-02——接口测试框架"><img class="cover" src="/hexoblog/2022/08/23/efc3e8c826a3/cover.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-23</div><div class="title">打工人的自我修养-后端-02——接口测试框架</div></div></a></div><div><a href="/hexoblog/2022/11/03/42805abca722/" title="打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现"><img class="cover" src="/hexoblog/2022/11/03/42805abca722/svg.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-03</div><div class="title">打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/hexoblog/img/avatar.png" onerror="this.onerror=null;this.src='/hexoblog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zzyi</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/hexoblog/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/hexoblog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/hexoblog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/uniminio" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/uniminio" target="_blank" title="Gitee"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="mailto:uniminio@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">摸了</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Readme"><span class="toc-text">一、Readme</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">二、准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Hello-World-Spring-Boot"><span class="toc-text">三、Hello World Spring Boot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%95%E8%B0%93Spring-Boot"><span class="toc-text">1. 何谓Spring Boot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Spring-Initializr"><span class="toc-text">2. Spring Initializr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AEMaven"><span class="toc-text">3. 配置Maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E5%86%99%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3"><span class="toc-text">4. 编写你的第一个接口</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/hexoblog/2022/11/03/42805abca722/" title="打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现"><img src="/hexoblog/2022/11/03/42805abca722/svg.svg" onerror="this.onerror=null;this.src='/hexoblog/img/404.jpg'" alt="打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现"/></a><div class="content"><a class="title" href="/hexoblog/2022/11/03/42805abca722/" title="打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现">打工人的自我修养-后端-03——基于MyBatis-Plus的简单登录实现</a><time datetime="2022-11-03T02:48:54.000Z" title="发表于 2022-11-03 10:48:54">2022-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexoblog/2022/08/23/efc3e8c826a3/" title="打工人的自我修养-后端-02——接口测试框架"><img src="/hexoblog/2022/08/23/efc3e8c826a3/cover.svg" onerror="this.onerror=null;this.src='/hexoblog/img/404.jpg'" alt="打工人的自我修养-后端-02——接口测试框架"/></a><div class="content"><a class="title" href="/hexoblog/2022/08/23/efc3e8c826a3/" title="打工人的自我修养-后端-02——接口测试框架">打工人的自我修养-后端-02——接口测试框架</a><time datetime="2022-08-23T02:01:19.000Z" title="发表于 2022-08-23 10:01:19">2022-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexoblog/2022/08/10/c2af516864cc/" title="打工人的自我修养(后端)01——Hello World Spring Boot"><img src="/hexoblog/2022/08/10/c2af516864cc/cover.svg" onerror="this.onerror=null;this.src='/hexoblog/img/404.jpg'" alt="打工人的自我修养(后端)01——Hello World Spring Boot"/></a><div class="content"><a class="title" href="/hexoblog/2022/08/10/c2af516864cc/" title="打工人的自我修养(后端)01——Hello World Spring Boot">打工人的自我修养(后端)01——Hello World Spring Boot</a><time datetime="2022-08-10T06:35:25.000Z" title="发表于 2022-08-10 14:35:25">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexoblog/2022/06/26/eb22c48e2dd8/" title="内网穿透工具frp的简单使用"><img src="/hexoblog/2022/06/26/eb22c48e2dd8/cover.svg" onerror="this.onerror=null;this.src='/hexoblog/img/404.jpg'" alt="内网穿透工具frp的简单使用"/></a><div class="content"><a class="title" href="/hexoblog/2022/06/26/eb22c48e2dd8/" title="内网穿透工具frp的简单使用">内网穿透工具frp的简单使用</a><time datetime="2022-06-26T06:37:09.000Z" title="发表于 2022-06-26 14:37:09">2022-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hexoblog/2021/10/18/33f24944f4da/" title="Conan基于Visual Studio的创建及上传包"><img src="/hexoblog/2021/10/18/33f24944f4da/cover.svg" onerror="this.onerror=null;this.src='/hexoblog/img/404.jpg'" alt="Conan基于Visual Studio的创建及上传包"/></a><div class="content"><a class="title" href="/hexoblog/2021/10/18/33f24944f4da/" title="Conan基于Visual Studio的创建及上传包">Conan基于Visual Studio的创建及上传包</a><time datetime="2021-10-18T08:57:55.000Z" title="发表于 2021-10-18 16:57:55">2021-10-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Zzyi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/hexoblog/js/utils.js"></script><script src="/hexoblog/js/main.js"></script><script src="/hexoblog/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/hexoblog/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '2ToKrPTRpfz19tqgCikyynwK-gzGzoHsz',
+      appKey: 'WP7qJkrIXScBUxcdwcuyyDs1',
+      placeholder: '(ｏ^-^)',
+      avatar: 'mp',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: 'https://2tokrptr.lc-cn-n1-shared.com',
+      emojiCDN: '//i0.hdslb.com/bfs/emote/',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

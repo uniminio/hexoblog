@@ -1,0 +1,22 @@
+<svg width="700" height="480" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <linearGradient spreadMethod="pad" y2="0.79219" x2="1" y1="0.26484" x1="0" id="svg_2">
+   <stop offset="0%" stop-color="rgb(0,255,255)"/>
+   <stop offset="100%" stop-color="rgb(0,0,255)"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="url(#svg_2)" id="canvas_background" height="482" width="702" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_3"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000" fill="#ffffff" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="65.640625" y="191.25" id="svg_6" font-size="50" font-family="'Simonetta', serif" text-anchor="start" xml:space="preserve" font-weight="bold" font-style="normal">Conan基于Visual Studio</text>
+  <path id="svg_17" d="m169.5,216.25" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#EEFF9F"/>
+  <text stroke="#000" fill="#ffffff" stroke-width="0" stroke-opacity="null" fill-opacity="null" x="243.53125" y="309.25" id="svg_18" font-size="50" font-family="'Simonetta', serif" text-anchor="start" xml:space="preserve" font-weight="bold" font-style="normal">的使用</text>
+ </g>
+</svg>
